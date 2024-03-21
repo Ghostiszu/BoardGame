@@ -8,8 +8,6 @@ public class Node : MonoBehaviour
 {
     public enum SpaceType {Combat, Shop, Itembox, MagicBox, Rest}
     [SerializeField] GameManager gameManager;
-    [SerializeField] GameObject battleArea;
-    [SerializeField] GameObject boardArea;
     public SpaceType spaceType;
 
     public static GameObject playerOnNode;
@@ -21,8 +19,7 @@ public class Node : MonoBehaviour
         if(spaceType == SpaceType.Combat)
         {
             playerOnNode = player;
-            boardArea.SetActive(false);
-            battleArea.SetActive(true);
+            gameManager.StartBattle();
             //Load Battle Scene
         }
         if(spaceType == SpaceType.Shop)
@@ -42,8 +39,7 @@ public class Node : MonoBehaviour
 
         }
         
-        gameManager.currentPlayerTurn.DeActiveTurn();
-        gameManager.SetNextTurn();
+
         
     }
 }

@@ -29,12 +29,12 @@ public class TurnSystem : State
 
     public void SwapTurn()
     { 
-        if(BattleSystem.unit01 == BattleSystem.attacker && BattleSystem.unit02 == BattleSystem.defender)
+        if(BattleSystem.unit01.Equals(BattleSystem.attacker) && BattleSystem.unit02.Equals(BattleSystem.defender))
         {
             BattleSystem.defender = BattleSystem.unit01;
             BattleSystem.attacker = BattleSystem.unit02;
         }
-        else if(BattleSystem.unit01 == BattleSystem.defender && BattleSystem.unit02 == BattleSystem.attacker)
+        else if(BattleSystem.unit01.Equals(BattleSystem.defender) && BattleSystem.unit02.Equals(BattleSystem.attacker))
         {
             BattleSystem.defender = BattleSystem.unit02;
             BattleSystem.attacker = BattleSystem.unit01;

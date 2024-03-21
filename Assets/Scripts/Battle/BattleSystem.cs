@@ -5,14 +5,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BattleSystem : StateMachine
-{
-    public Unit unit01;
-    public Unit unit02;
-
-    public GameObject unit01Prefab;
-    public GameObject unit02Prefab;
+{   
     public Transform unit01Station;
     public Transform unit02Station;
+    public GameObject unit01Prefab;
+    public GameObject unit02Prefab;
+
+    
+    public Unit unit01;
+    public Unit unit02;
 
     public GameObject unit01GameObject;
     public GameObject unit02GameObject;
@@ -25,12 +26,14 @@ public class BattleSystem : StateMachine
     public string attackType;
     public string defendType;
 
+    [SerializeField] GameManager gameManager;
+
     [SerializeField] GameObject battleArea;
     [SerializeField] GameObject boardArea;
-    [SerializeField] DataManager dataManager;
+    //[SerializeField] DataManager dataManager;
 
     private void OnEnable() {
-        turnCount =1;
+        turnCount = 1;
         unit01Prefab = Node.playerOnNode;
         SetState(new BeginBattle(this));
     }
@@ -62,11 +65,20 @@ public class BattleSystem : StateMachine
 
     public void EndBattle()
     {
-        dataManager.Save_Data();
-        boardArea.SetActive(true);
+        //dataManager.Save_Data();
+        if(unit01.currentHp > 0 || unit02.currentHp > 0)
+        {
+            Node.playerOnNode.GetComponent<PlayerMovement>().isFighting = true;
+        }
+        
         battleArea.SetActive(false);
+        boardArea.SetActive(true);
         Destroy(unit01GameObject);
         Destroy(unit02GameObject);
+        gameManager.currentPlayerTurn.DeActiveTurn();
+        gameManager.SetNextTurn();
+
+
     }
 
 

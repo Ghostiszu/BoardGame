@@ -54,12 +54,13 @@ public class CalculateDamage : State
 
     private void GiveDamage()
     {
-        bool isDead = BattleSystem.defender.TakeDamage(damage);
+        BattleSystem.defender.currentHp = BattleSystem.defender.currentHp - damage;
+        Debug.Log("Hp: " + BattleSystem.defender.currentHp);
         //enemyHUD.SetHP(enemyUnit.currentHp);
         Debug.Log("Turn: " + BattleSystem.turnCount +" End.");
         BattleSystem.turnCount++;
 
-        if(isDead)
+        if(BattleSystem.defender.currentHp <= 0)
         {
             BattleSystem.SetState(new EndBattle(BattleSystem));
         }

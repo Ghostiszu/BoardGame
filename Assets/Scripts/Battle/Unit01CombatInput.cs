@@ -21,12 +21,12 @@ public class Unit01CombatInput : State
 
     public override void LeftButton()
     {
-        if(BattleSystem.unit01 == BattleSystem.attacker)
+        if(BattleSystem.unit01.Equals(BattleSystem.attacker))
         {
             BattleSystem.attackType = "Strike";
             
         }
-        else if(BattleSystem.unit01 == BattleSystem.defender)
+        else if(BattleSystem.unit01.Equals(BattleSystem.defender))
         {
             BattleSystem.defendType = "Counter";
         }
@@ -35,11 +35,11 @@ public class Unit01CombatInput : State
 
     public override void RightButton()
     {
-        if(BattleSystem.unit01 == BattleSystem.attacker)
+        if(BattleSystem.unit01.Equals(BattleSystem.attacker))
         {
             BattleSystem.attackType = "Attack";
         }
-        else if(BattleSystem.unit01 == BattleSystem.defender)
+        else if(BattleSystem.unit01.Equals(BattleSystem.defender))
         {
             BattleSystem.defendType = "Guard";
         }
@@ -48,11 +48,11 @@ public class Unit01CombatInput : State
 
     public override void UpButton()
     {
-        if(BattleSystem.unit01 == BattleSystem.attacker)
+        if(BattleSystem.unit01.Equals(BattleSystem.attacker))
         {
             BattleSystem.attackType = "Magic";
         }
-        else if(BattleSystem.unit01 == BattleSystem.defender)
+        else if(BattleSystem.unit01.Equals(BattleSystem.defender))
         {
             BattleSystem.defendType = "MagicDef";
         }

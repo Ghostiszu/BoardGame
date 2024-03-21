@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2493098319636518725}
   - component: {fileID: 8656370243486672567}
-  - component: {fileID: 3980500744579438300}
+  - component: {fileID: 4995238664940482278}
   m_Layer: 0
   m_Name: Player01
   m_TagString: Untagged
@@ -130,11 +130,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b113dcd3e3bf1ba40a184ab810bddfb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRoute: {fileID: 0}
-  routePosition: 0
-  currentNode: {fileID: 0}
-  steps: 0
---- !u!114 &3980500744579438300
+  playerNumber: 0
+  unitName: Player 1
+  unitLevel: 1
+  unitATK: 5
+  unitDEF: 4
+  unitMG: 3
+  offMagic: []
+  defMagic: 0
+  maxHP: 50
+  currentHp: 50
+--- !u!114 &4995238664940482278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,15 +149,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2911584494100092099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32fb5ddd9a0dffe49b40a1f59fb4f26e, type: 3}
+  m_Script: {fileID: 11500000, guid: e935f7adacd4afc40b943c1f76470efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Player1
-  unitLevel: 1
-  unitATK: 10
-  unitDEF: 10
-  unitMG: 10
-  offMagic: []
-  defMagic: 0
-  maxHP: 100
-  currentHp: 100
+  currentRoute: {fileID: 0}
+  routePosition: 0
+  currentNode: {fileID: 0}
+  steps: 0
+  isCurrentTurn: 0

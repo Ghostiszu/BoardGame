@@ -66,6 +66,7 @@ public class SetUpAttackerDefender : State
             BattleSystem.defender = BattleSystem.unit01;
             Debug.Log("You are Defender");
         }
+        
 
         BattleSystem.SetState(new TurnSystem(BattleSystem));
     }

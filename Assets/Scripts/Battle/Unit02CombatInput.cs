@@ -19,7 +19,7 @@ public class Unit02CombatInput : State
     {
         int randomCombatType = UnityEngine.Random.Range(0,2);
 
-        if(BattleSystem.unit02 == BattleSystem.attacker)
+        if(BattleSystem.unit02.Equals(BattleSystem.attacker))
         {
             switch(randomCombatType)
             {
@@ -34,7 +34,7 @@ public class Unit02CombatInput : State
                     break;
             }
         }
-        else if(BattleSystem.unit02 == BattleSystem.defender)
+        else if(BattleSystem.unit02.Equals(BattleSystem.defender))
         {
             switch(randomCombatType)
             {
